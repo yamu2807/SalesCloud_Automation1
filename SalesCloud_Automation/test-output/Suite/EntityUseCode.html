@@ -1,0 +1,154 @@
+<html>
+<head>
+<title>TestNG:  EntityUseCode</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>EntityUseCode</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>15/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Thu Jan 07 19:20:49 IST 2021</td>
+</tr>
+<tr><td>Total time:</td><td>1592 seconds (1592757 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='TestCases.Regression.EntityUseCode.TestCase110_EntityUseCode_A_TaxCalculation()'><b>TestCase110_EntityUseCode_A_TaxCalculation</b><br>Test class: TestCases.Regression.EntityUseCode<br>Test method: EnableTaxCalc_ShipToAddress</td>
+<td></td>
+<td>165</td>
+<td>TestCases.Regression.EntityUseCode@3bfdc050</td></tr>
+<tr>
+<td title='TestCases.Regression.EntityUseCode.TestCaseC1592569_EntityUseCode_UpdatedOnOpportunityTransaction()'><b>TestCaseC1592569_EntityUseCode_UpdatedOnOpportunityTransaction</b><br>Test class: TestCases.Regression.EntityUseCode<br>Test method: Test rail test case-C1592569, Update Entity/Use code on Transaction</td>
+<td></td>
+<td>103</td>
+<td>TestCases.Regression.EntityUseCode@3bfdc050</td></tr>
+<tr>
+<td title='TestCases.Regression.EntityUseCode.TestCaseC1852479_LineLevelEntityUseCode_OpportunityTransaction()'><b>TestCaseC1852479_LineLevelEntityUseCode_OpportunityTransaction</b><br>Test class: TestCases.Regression.EntityUseCode<br>Test method: Test rail test case-C1852479, Opportunities-Verify the Line Level Entity/Use Code mapping for multiple line items</td>
+<td></td>
+<td>126</td>
+<td>TestCases.Regression.EntityUseCode@3bfdc050</td></tr>
+<tr>
+<td title='TestCases.Regression.EntityUseCode.TestCaseC1853073_LineLevelEntityUseCode_QuoteTransaction()'><b>TestCaseC1853073_LineLevelEntityUseCode_QuoteTransaction</b><br>Test class: TestCases.Regression.EntityUseCode<br>Test method: Test rail test case-C1853073,Quotes -Verify Entity use code at line level passed on to Quote transaction from Opportunity transaction</td>
+<td></td>
+<td>135</td>
+<td>TestCases.Regression.EntityUseCode@3bfdc050</td></tr>
+<tr>
+<td title='TestCases.Regression.EntityUseCode.TestCaseC1853081_LineLevelEntityUseCode_OpportunityTransaction()'><b>TestCaseC1853081_LineLevelEntityUseCode_OpportunityTransaction</b><br>Test class: TestCases.Regression.EntityUseCode<br>Test method: Test rail test case-C1853081, Quotes - Verify the Line Level Entity/Use Code mapping for multiple line items</td>
+<td></td>
+<td>126</td>
+<td>TestCases.Regression.EntityUseCode@3bfdc050</td></tr>
+<tr>
+<td title='TestCases.Regression.EntityUseCode.TestCaseC1853087_LineLevelEntityUseCode_OrderTransaction()'><b>TestCaseC1853087_LineLevelEntityUseCode_OrderTransaction</b><br>Test class: TestCases.Regression.EntityUseCode<br>Test method: Test rail test case-C1853087, Order - Verify the Line Level Entity/Use Code mapping for multiple line items</td>
+<td></td>
+<td>111</td>
+<td>TestCases.Regression.EntityUseCode@3bfdc050</td></tr>
+<tr>
+<td title='TestCases.Regression.EntityUseCode.testCaseC1592570_EntityUseCode_RemoveFromOpportunityTransaction()'><b>testCaseC1592570_EntityUseCode_RemoveFromOpportunityTransaction</b><br>Test class: TestCases.Regression.EntityUseCode<br>Test method: Test rail test case-C1592570, Remove Entity/Use code on Transaction</td>
+<td></td>
+<td>104</td>
+<td>TestCases.Regression.EntityUseCode@3bfdc050</td></tr>
+<tr>
+<td title='TestCases.Regression.EntityUseCode.testCaseC1592571_UpdateACcNameWithDiffrentEntityUseCodeOnOpportunityTransaction()'><b>testCaseC1592571_UpdateACcNameWithDiffrentEntityUseCodeOnOpportunityTransaction</b><br>Test class: TestCases.Regression.EntityUseCode<br>Test method: Test rail test case-C1592571, Update ACc Name With Diffrent Entity Use Code On Transaction</td>
+<td></td>
+<td>101</td>
+<td>TestCases.Regression.EntityUseCode@3bfdc050</td></tr>
+<tr>
+<td title='TestCases.Regression.EntityUseCode.testCaseC1592572_UpdateACcNameWithNoEntityUseCodeOnOpportunityTransaction()'><b>testCaseC1592572_UpdateACcNameWithNoEntityUseCodeOnOpportunityTransaction</b><br>Test class: TestCases.Regression.EntityUseCode<br>Test method: Test rail test case-C1592572, Update ACc Name With No Entity Use Code, On Transaction</td>
+<td></td>
+<td>105</td>
+<td>TestCases.Regression.EntityUseCode@3bfdc050</td></tr>
+<tr>
+<td title='TestCases.Regression.EntityUseCode.testCaseC1593290_EntityUseCode_UpdatedOnQuotesTransaction()'><b>testCaseC1593290_EntityUseCode_UpdatedOnQuotesTransaction</b><br>Test class: TestCases.Regression.EntityUseCode<br>Test method: Test rail test case-C1593290, Update Entity/Use code on Transaction</td>
+<td></td>
+<td>117</td>
+<td>TestCases.Regression.EntityUseCode@3bfdc050</td></tr>
+<tr>
+<td title='TestCases.Regression.EntityUseCode.testCaseC1593293_EntityUseCode_RemoveFromQuotesTransaction()'><b>testCaseC1593293_EntityUseCode_RemoveFromQuotesTransaction</b><br>Test class: TestCases.Regression.EntityUseCode<br>Test method: Test rail test case-C1593293, Remove Entity/Use code on Transaction</td>
+<td></td>
+<td>117</td>
+<td>TestCases.Regression.EntityUseCode@3bfdc050</td></tr>
+<tr>
+<td title='TestCases.Regression.EntityUseCode.testCaseC1593297_EntityUseCode_UpdatedOnOrderTransaction()'><b>testCaseC1593297_EntityUseCode_UpdatedOnOrderTransaction</b><br>Test class: TestCases.Regression.EntityUseCode<br>Test method: Test rail test case-C1593297, Update Entity/Use code on Transaction</td>
+<td></td>
+<td>87</td>
+<td>TestCases.Regression.EntityUseCode@3bfdc050</td></tr>
+<tr>
+<td title='TestCases.Regression.EntityUseCode.testCaseC1593298_EntityUseCode_RemoveFromOrderTransaction()'><b>testCaseC1593298_EntityUseCode_RemoveFromOrderTransaction</b><br>Test class: TestCases.Regression.EntityUseCode<br>Test method: Test rail test case-C1593298, Remove Entity/Use code on Transaction</td>
+<td></td>
+<td>55</td>
+<td>TestCases.Regression.EntityUseCode@3bfdc050</td></tr>
+<tr>
+<td title='TestCases.Regression.EntityUseCode.testCaseC1593299_UpdateACcNameWithDiffrentEntityUseCodeOnOrderTransaction()'><b>testCaseC1593299_UpdateACcNameWithDiffrentEntityUseCodeOnOrderTransaction</b><br>Test class: TestCases.Regression.EntityUseCode<br>Test method: Test rail test case-C1593299, Update ACc Name With Diffrent Entity Use Code On Transaction</td>
+<td></td>
+<td>55</td>
+<td>TestCases.Regression.EntityUseCode@3bfdc050</td></tr>
+<tr>
+<td title='TestCases.Regression.EntityUseCode.testCaseC1593300_UpdateACcNameWithNoEntityUseCodeOnOrderTransaction()'><b>testCaseC1593300_UpdateACcNameWithNoEntityUseCodeOnOrderTransaction</b><br>Test class: TestCases.Regression.EntityUseCode<br>Test method: Test rail test case-C1593300, Update ACc Name With No Entity Use Code, On Transaction</td>
+<td></td>
+<td>54</td>
+<td>TestCases.Regression.EntityUseCode@3bfdc050</td></tr>
+</table><p>
+</body>
+</html>

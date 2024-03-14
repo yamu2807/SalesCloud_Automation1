@@ -1,0 +1,338 @@
+package RegressionSuite;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
+import Pages.BussinessManagerPage;
+import Pages.StoreFrontCheckoutPage;
+import Pages.StoreFrontPage;
+import Repository.ObjectRepository;
+import Utilities.ExcelFileReader;
+
+//This class contains test case for Address Validation feature for Regression testing
+public class AddressValidation extends ObjectRepository{
+	
+	BussinessManagerPage bussinessManagerPage = null;
+	StoreFrontPage storeFrontPage = null;
+	StoreFrontCheckoutPage storeFrontCheckoutPage = null;
+	List<String> guestFormDetails = null;
+	SoftAssert softAssert = null;
+
+	@BeforeMethod
+	public void ExcelSheetName(){
+		sheetName = "AddressValidation";
+		initializeDriver();
+		//page object initialization
+		bussinessManagerPage = new BussinessManagerPage();
+		storeFrontPage = new StoreFrontPage();
+		storeFrontCheckoutPage = new StoreFrontCheckoutPage();
+	}
+	
+	@AfterMethod
+	public void closeBrowser(){
+		quitDriver();
+	}
+
+	@Test(priority = 1, description= "Check-Out As Guest Enable Address ValidationON")
+	public void CheckOutAsGuestEnableAddressValidationON(){
+		softAssert = new SoftAssert();
+		testCaseID = "TestCase01";
+		System.out.println("Module: "+sheetName+"\nStart of Test-case: "+testCaseID);
+		excelData =  ExcelFileReader.GetValueFromExcelSheet(sheetName, testCaseID);
+		//Get details to fill shipping address form on Store front
+		getFormDetails();
+		
+		bussinessManagerPage.loginToBussinessManager();
+		bussinessManagerPage.selectSFRA_RESTV2_Site("RefArch");
+		bussinessManagerPage.navigateToMyTestProjecteXAMPLESettingPage();
+		bussinessManagerPage.applyMyTestProjecteXAMPLESettings();
+		bussinessManagerPage.clickOnStoreFrontLink();
+		bussinessManagerPage.switchToStoreFront();
+		String product = "25591445M";
+		storeFrontPage.searchAndAddProductToCart(product);
+		storeFrontCheckoutPage.navigateToStoreFrontCheckoutPage("Guest");
+		storeFrontCheckoutPage.fillShippingFormDetails(guestFormDetails);
+		storeFrontCheckoutPage.clickOnContinueToBillingButton();
+		String actualAddressText = storeFrontCheckoutPage.getvalidatedAddressOnBillingPage();
+		System.out.println("actualAddressText:"+actualAddressText);
+		String expectedStatus = excelData.get("ExpectedResult");
+		System.out.println("expectedStatus"+expectedStatus);
+		softAssert.assertEquals(actualAddressText.contains(expectedStatus),true,"Address is not validated");
+		bussinessManagerPage.switchToBussinessManager();
+		bussinessManagerPage.clickOnLogOutButton();	
+		softAssert.assertAll();	
+	}
+	
+	@Test(priority = 2, description= "Registered User Address Validation ON Update Address")
+	public void registeredUser_AddressValidationON_UpdateAddress(){
+		SoftAssert softAssert = new SoftAssert();
+		testCaseID = "TestCase02";
+		System.out.println("Module: "+sheetName+"\nStart of Test-case: "+testCaseID);
+		excelData =  ExcelFileReader.GetValueFromExcelSheet(sheetName, testCaseID);
+		//Get details to fill shipping address form on Store front
+		getFormDetails();
+		
+		bussinessManagerPage.loginToBussinessManager();
+		bussinessManagerPage.selectSFRA_RESTV2_Site("RefArch");
+		bussinessManagerPage.navigateToMyTestProjecteXAMPLESettingPage();
+		bussinessManagerPage.applyMyTestProjecteXAMPLESettings();
+		bussinessManagerPage.clickOnStoreFrontLink();
+		bussinessManagerPage.switchToStoreFront();
+		String product = "25591445M";
+		storeFrontPage.searchAndAddProductToCart(product);
+		storeFrontCheckoutPage.navigateToStoreFrontCheckoutPage("Registered");
+		//Click on Update Address link
+		storeFrontCheckoutPage.clickOnUpdateAddressLinkTextOnShippingPage();
+		storeFrontCheckoutPage.fillShippingFormDetails(guestFormDetails);
+		storeFrontCheckoutPage.clickOnContinueToBillingButton();
+		String actualAddressText = storeFrontCheckoutPage.getvalidatedAddressOnBillingPage();
+		System.out.println("actualAddressText:"+actualAddressText);
+		String expectedStatus = excelData.get("ExpectedResult");
+		System.out.println("expectedStatus"+expectedStatus);
+		softAssert.assertEquals(actualAddressText.contains(expectedStatus),true,"Address is not validated");
+		bussinessManagerPage.switchToBussinessManager();
+		bussinessManagerPage.clickOnLogOutButton();	
+		softAssert.assertAll();	
+	}
+	
+/*	@Test(priority = 3, description= "Registered User AddressValidationON_AddNewAddress")
+	public void registeredUser_AddressValidationON_AddNewAddress(){
+		SoftAssert softAssert = new SoftAssert();
+		testCaseID = "TestCase03";
+		System.out.println("Module: "+sheetName+"\nStart of Test-case: "+testCaseID);
+		excelData =  ExcelFileReader.GetValueFromExcelSheet(sheetName, testCaseID);
+		//Get details to fill shipping address form on Store front
+		getFormDetails();
+		
+		bussinessManagerPage.loginToBussinessManager();
+		bussinessManagerPage.selectSFRA_RESTV2_Site("RefArch");
+		bussinessManagerPage.navigateToMyTestProjecteXAMPLESettingPage();
+		bussinessManagerPage.applyMyTestProjecteXAMPLESettings();
+		bussinessManagerPage.clickOnStoreFrontLink();
+		bussinessManagerPage.switchToStoreFront();
+		String product = "25591445M";
+		storeFrontPage.searchAndAddProductToCart(product);
+		storeFrontCheckoutPage.navigateToStoreFrontCheckoutPage("Registered");
+		//Click on Update Address link
+		storeFrontCheckoutPage.clickOnAddAddressLinkTextOnShippingPage();
+		storeFrontCheckoutPage.fillShippingFormDetails(guestFormDetails);
+		storeFrontCheckoutPage.clickOnContinueToBillingButton();
+		String actualAddressText = storeFrontCheckoutPage.getvalidatedAddressOnBillingPage();
+		System.out.println("actualAddressText:"+actualAddressText);
+		String expectedStatus = excelData.get("ExpectedResult");
+		System.out.println("expectedStatus:"+expectedStatus);
+		softAssert.assertEquals(actualAddressText.contains(expectedStatus),true,"Address is not validated");
+		bussinessManagerPage.switchToBussinessManager();
+		bussinessManagerPage.clickOnLogOutButton();	
+		softAssert.assertAll();	
+	}*/
+	
+	@Test(priority = 4, description= "CheckOutAsGuestVerify_StreetNameNotFoundErrorMessage")
+	public void CheckOutAsGuestVerify_StreetNameNotFoundErrorMessage(){
+		SoftAssert softAssert = new SoftAssert();
+		testCaseID = "TestCase04";
+		System.out.println("Module: "+sheetName+"\nStart of Test-case: "+testCaseID);
+		excelData =  ExcelFileReader.GetValueFromExcelSheet(sheetName, testCaseID);
+		//Get details to fill shipping address form on Store front
+		getFormDetails();
+		
+		bussinessManagerPage.loginToBussinessManager();
+		bussinessManagerPage.selectSFRA_RESTV2_Site("RefArch");
+		bussinessManagerPage.navigateToMyTestProjecteXAMPLESettingPage();
+		bussinessManagerPage.applyMyTestProjecteXAMPLESettings();
+		bussinessManagerPage.clickOnStoreFrontLink();
+		bussinessManagerPage.switchToStoreFront();
+		String product = "25591445M";
+		storeFrontPage.searchAndAddProductToCart(product);
+		storeFrontCheckoutPage.navigateToStoreFrontCheckoutPage("Guest");
+		storeFrontCheckoutPage.fillShippingFormDetails(guestFormDetails);
+		storeFrontCheckoutPage.clickOnContinueToBillingButton();
+		String actualAddressText = storeFrontCheckoutPage.getAddressValidationErrorMessage_StreetNotFoundText();
+		System.out.println("actualAddressText:"+actualAddressText);
+		String expectedStatus = excelData.get("ExpectedResult");
+		System.out.println("expectedStatus"+expectedStatus);
+		softAssert.assertEquals(actualAddressText.contains(expectedStatus),true,"Address is not validated");
+		bussinessManagerPage.switchToBussinessManager();
+		bussinessManagerPage.clickOnLogOutButton();	
+		softAssert.assertAll();	
+	}
+
+/*	@Test(priority = 5, description= "CheckOutAsGuestVerify_AddressNumberOutOfRangeErrorMessage")
+	public void CheckOutAsGuestVerify_AddressNumberOutOfRangeErrorMessage(){
+		SoftAssert softAssert = new SoftAssert();
+		testCaseID = "TestCase05";
+		System.out.println("Module: "+sheetName+"\nStart of Test-case: "+testCaseID);
+		excelData =  ExcelFileReader.GetValueFromExcelSheet(sheetName, testCaseID);
+		//Get details to fill shipping address form on Store front
+		getFormDetails();
+		
+		bussinessManagerPage.loginToBussinessManager();
+		bussinessManagerPage.selectSFRA_RESTV2_Site("RefArch");
+		bussinessManagerPage.navigateToMyTestProjecteXAMPLESettingPage();
+		bussinessManagerPage.applyMyTestProjecteXAMPLESettings();
+		bussinessManagerPage.clickOnStoreFrontLink();
+		bussinessManagerPage.switchToStoreFront();
+		String product = "25591445M";
+		storeFrontPage.searchAndAddProductToCart(product);
+		storeFrontCheckoutPage.navigateToStoreFrontCheckoutPage("Guest");
+		storeFrontCheckoutPage.fillShippingFormDetails(guestFormDetails);
+		storeFrontCheckoutPage.clickOnContinueToBillingButton();
+		String actualAddressText = storeFrontCheckoutPage.getAddressValidationErrorMessage_addressNumberOutOfRangeText();
+		System.out.println("actualAddressText:"+actualAddressText);
+		String expectedStatus = excelData.get("ExpectedResult");
+		System.out.println("expectedStatus"+expectedStatus);
+		softAssert.assertEquals(actualAddressText.contains(expectedStatus),true,"Address is not validated");
+		bussinessManagerPage.switchToBussinessManager();
+		bussinessManagerPage.clickOnLogOutButton();	
+		softAssert.assertAll();	
+	}*/
+	
+@Test(priority = 6, description= "registeredUser_VerifyStreetNameNotFoundErrorMessage_OnAddressUpdation")
+	public void registeredUser_VerifyStreetNameNotFoundErrorMessage_OnAddressUpdation(){
+		SoftAssert softAssert = new SoftAssert();
+		testCaseID = "TestCase06";
+		System.out.println("Module: "+sheetName+"\nStart of Test-case: "+testCaseID);
+		excelData =  ExcelFileReader.GetValueFromExcelSheet(sheetName, testCaseID);
+		//Get details to fill shipping address form on Store front
+		getFormDetails();
+		
+		bussinessManagerPage.loginToBussinessManager();
+		bussinessManagerPage.selectSFRA_RESTV2_Site("RefArch");
+		bussinessManagerPage.navigateToMyTestProjecteXAMPLESettingPage();
+		bussinessManagerPage.applyMyTestProjecteXAMPLESettings();
+		bussinessManagerPage.clickOnStoreFrontLink();
+		bussinessManagerPage.switchToStoreFront();
+		String product = "25591445M";
+		storeFrontPage.searchAndAddProductToCart(product);
+		storeFrontCheckoutPage.navigateToStoreFrontCheckoutPage("Registered");
+		//Click on Update Address link
+		storeFrontCheckoutPage.clickOnUpdateAddressLinkTextOnShippingPage();
+		storeFrontCheckoutPage.fillShippingFormDetails(guestFormDetails);
+		storeFrontCheckoutPage.clickOnContinueToBillingButton();
+		String actualAddressText = storeFrontCheckoutPage.getAddressValidationErrorMessage_StreetNotFoundText();
+		System.out.println("actualAddressText:"+actualAddressText);
+		String expectedStatus = excelData.get("ExpectedResult");
+		System.out.println("expectedStatus"+expectedStatus);
+		softAssert.assertEquals(actualAddressText.contains(expectedStatus),true,"Address is not validated");
+		bussinessManagerPage.switchToBussinessManager();
+		bussinessManagerPage.clickOnLogOutButton();	
+		softAssert.assertAll();	
+	}
+	
+/*	@Test(priority = 7, description= "registeredUser_VerifyAddressNumberOutOfRangeErrorMessage_OnAddressUpdation")
+	public void registeredUser_VerifyAddressNumberOutOfRangeErrorMessage_OnAddressUpdation(){
+		SoftAssert softAssert = new SoftAssert();
+		testCaseID = "TestCase07";
+		System.out.println("Module: "+sheetName+"\nStart of Test-case: "+testCaseID);
+		excelData =  ExcelFileReader.GetValueFromExcelSheet(sheetName, testCaseID);
+		//Get details to fill shipping address form on Store front
+		getFormDetails();
+		
+		bussinessManagerPage.loginToBussinessManager();
+		bussinessManagerPage.selectSFRA_RESTV2_Site("RefArch");
+		bussinessManagerPage.navigateToMyTestProjecteXAMPLESettingPage();
+		bussinessManagerPage.applyMyTestProjecteXAMPLESettings();
+		bussinessManagerPage.clickOnStoreFrontLink();
+		bussinessManagerPage.switchToStoreFront();
+		String product = "25591445M";
+		storeFrontPage.searchAndAddProductToCart(product);
+		storeFrontCheckoutPage.navigateToStoreFrontCheckoutPage("Registered");
+		//Click on Update Address link
+		storeFrontCheckoutPage.clickOnAddAddressLinkTextOnShippingPage();
+		storeFrontCheckoutPage.fillShippingFormDetails(guestFormDetails);
+		storeFrontCheckoutPage.clickOnContinueToBillingButton();
+		String actualAddressText = storeFrontCheckoutPage.getAddressValidationErrorMessage_addressNumberOutOfRangeText();
+		System.out.println("actualAddressText:"+actualAddressText);
+		String expectedStatus = excelData.get("ExpectedResult");
+		System.out.println("expectedStatus"+expectedStatus);
+		softAssert.assertEquals(actualAddressText.contains(expectedStatus),true,"Address is not validated");
+		bussinessManagerPage.switchToBussinessManager();
+		bussinessManagerPage.clickOnLogOutButton();	
+		softAssert.assertAll();	
+	}
+	
+	@Test(priority = 8, description= "registeredUser_VerifyStreetNameNotFoundErrorMessage_OnAddingNewAddress")
+	public void registeredUser_VerifyStreetNameNotFoundErrorMessage_OnAddingNewAddress(){
+		SoftAssert softAssert = new SoftAssert();
+		testCaseID = "TestCase06";
+		System.out.println("Module: "+sheetName+"\nStart of Test-case: "+testCaseID);
+		excelData =  ExcelFileReader.GetValueFromExcelSheet(sheetName, testCaseID);
+		//Get details to fill shipping address form on Store front
+		getFormDetails();
+		
+		bussinessManagerPage.loginToBussinessManager();
+		bussinessManagerPage.selectSFRA_RESTV2_Site("RefArch");
+		bussinessManagerPage.navigateToMyTestProjecteXAMPLESettingPage();
+		bussinessManagerPage.applyMyTestProjecteXAMPLESettings();
+		bussinessManagerPage.clickOnStoreFrontLink();
+		bussinessManagerPage.switchToStoreFront();
+		String product = "25591445M";
+		storeFrontPage.searchAndAddProductToCart(product);
+		storeFrontCheckoutPage.navigateToStoreFrontCheckoutPage("Registered");
+		//Click on Update Address link
+		storeFrontCheckoutPage.clickOnUpdateAddressLinkTextOnShippingPage();
+		storeFrontCheckoutPage.fillShippingFormDetails(guestFormDetails);
+		storeFrontCheckoutPage.clickOnContinueToBillingButton();
+		String actualAddressText = storeFrontCheckoutPage.getAddressValidationErrorMessage_StreetNotFoundText();
+		System.out.println("actualAddressText:"+actualAddressText);
+		String expectedStatus = excelData.get("ExpectedResult");
+		System.out.println("expectedStatus"+expectedStatus);
+		softAssert.assertEquals(actualAddressText.contains(expectedStatus),true,"Address is not validated");
+		bussinessManagerPage.switchToBussinessManager();
+		bussinessManagerPage.clickOnLogOutButton();	
+		softAssert.assertAll();	
+	}
+	
+	@Test(priority = 9, description= "registeredUser_VerifyAddressNumberOutOfRangeErrorMessage_OnAddingNewAddress")
+	public void registeredUser_VerifyAddressNumberOutOfRangeErrorMessage_OnAddingNewAddress(){
+		SoftAssert softAssert = new SoftAssert();
+		testCaseID = "TestCase07";
+		System.out.println("Module: "+sheetName+"\nStart of Test-case: "+testCaseID);
+		excelData =  ExcelFileReader.GetValueFromExcelSheet(sheetName, testCaseID);
+		//Get details to fill shipping address form on Store front
+		getFormDetails();
+		
+		bussinessManagerPage.loginToBussinessManager();
+		bussinessManagerPage.selectSFRA_RESTV2_Site("RefArch");
+		bussinessManagerPage.navigateToMyTestProjecteXAMPLESettingPage();
+		bussinessManagerPage.applyMyTestProjecteXAMPLESettings();
+		bussinessManagerPage.clickOnStoreFrontLink();
+		bussinessManagerPage.switchToStoreFront();
+		String product = "25591445M";
+		storeFrontPage.searchAndAddProductToCart(product);
+		storeFrontCheckoutPage.navigateToStoreFrontCheckoutPage("Registered");
+		//Click on Update Address link
+		storeFrontCheckoutPage.clickOnAddAddressLinkTextOnShippingPage();
+		storeFrontCheckoutPage.fillShippingFormDetails(guestFormDetails);
+		storeFrontCheckoutPage.clickOnContinueToBillingButton();
+		String actualAddressText = storeFrontCheckoutPage.getAddressValidationErrorMessage_addressNumberOutOfRangeText();
+		System.out.println("actualAddressText:"+actualAddressText);
+		String expectedStatus = excelData.get("ExpectedResult");
+		System.out.println("expectedStatus"+expectedStatus);
+		softAssert.assertEquals(actualAddressText.contains(expectedStatus),true,"Address is not validated");
+		bussinessManagerPage.switchToBussinessManager();
+		bussinessManagerPage.clickOnLogOutButton();	
+		softAssert.assertAll();	
+	}*/
+	
+	/* Methods ****************************************************************************************************/
+	//To fetch all form details from excel and store it in an Array of List
+	public void getFormDetails(){
+		guestFormDetails = new ArrayList<String>();
+		guestFormDetails.add("Neha");
+		guestFormDetails.add("P");
+		guestFormDetails.add(excelData.get("ShiptoAddress_Line1"));
+		guestFormDetails.add(excelData.get("ShiptoAddress_Country"));
+		guestFormDetails.add(excelData.get("ShiptoAddress_State"));
+		guestFormDetails.add(excelData.get("ShiptoAddress_City")); 
+		guestFormDetails.add(excelData.get("ShiptoAddress_Zip"));
+		guestFormDetails.add("2");
+		guestFormDetails.add("neha.p@example.org");
+	}
+}

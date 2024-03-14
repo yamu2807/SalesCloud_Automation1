@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+ 	<test name="Salesforce Automation">
+	    <classes>
+	      <class name="TestCases.Regression.taxCalculation"/> 
+	      <class name="TestCases.Regression.SalesForce_AddressValidation"/>
+	      <class name="TestCases.Regression.SalesForce_VAT"/>
+	      <class name="TestCases.Regression.SalesForce_Tax_Override"/>
+	      <class name="TestCases.Regression.SalesForce_TaxCode"/>
+	   <!--    <class name="TestCases.Regression.SalesForce_EntityUseCode"/>
+	      <class name="TestCases.Regression.SalesForce_ErrorMessageDisplayed"/>
+	      <class name="TestCases.Regression.SalesForce_ExemptionNumber"/>
+	      <class name="TestCases.Regression.SalesForce_UPC_Code"/>
+	      <class name="TestCases.Regression.SalesForce_MISC_Charges"/>
+	      <class name="TestCases.Regression.SalesForce_3rdPartyAddressValidation"/>	
+	      <class name="TestCases.Regression.SalesForce_3rdPartyTaxCalculation"/> -->
+	   </classes>
+  </test>
+</suite> 
+
+

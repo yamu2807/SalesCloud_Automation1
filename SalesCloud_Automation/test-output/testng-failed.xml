@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test thread-count="5" name="AddressValidation(failed)">
+    <classes>
+      <class name="TestCases.Regression.AddressValidation">
+        <methods>
+          <include name="ExcelSheetName"/>
+          <include name="addressValidation_WithInvalidMyTestProjecteXAMPLECredential_Order_C1587257_C1587263"/>
+          <include name="tearDown"/>
+          <include name="StartTestCase"/>
+        </methods>
+      </class> <!-- TestCases.Regression.AddressValidation -->
+    </classes>
+  </test> <!-- AddressValidation(failed) -->
+</suite> <!-- Failed suite [Suite] -->

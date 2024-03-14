@@ -1,0 +1,239 @@
+<html>
+<head>
+<title>TestNG:  AddressValidation</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>AddressValidation</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>32/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Mon Nov 29 17:39:22 IST 2021</td>
+</tr>
+<tr><td>Total time:</td><td>2839 seconds (2839768 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='TestCases.Regression.AddressValidation.TestCase62_AddressValidation_ValidAddress_ACcs()'><b>TestCase62_AddressValidation_ValidAddress_ACcs</b><br>Test class: TestCases.Regression.AddressValidation<br>Test method: AddressValidation_ValidAddress_ACcs</td>
+<td></td>
+<td>83</td>
+<td>TestCases.Regression.AddressValidation@6f7fd0e6</td></tr>
+<tr>
+<td title='TestCases.Regression.AddressValidation.TestCase63_AddressValidation_ValidAddress_Quotes()'><b>TestCase63_AddressValidation_ValidAddress_Quotes</b><br>Test class: TestCases.Regression.AddressValidation<br>Test method: AddressValidation_ValidAddress_Quotes</td>
+<td></td>
+<td>64</td>
+<td>TestCases.Regression.AddressValidation@6f7fd0e6</td></tr>
+<tr>
+<td title='TestCases.Regression.AddressValidation.TestCase64_AddressValidation_ValidAddress_Orders()'><b>TestCase64_AddressValidation_ValidAddress_Orders</b><br>Test class: TestCases.Regression.AddressValidation<br>Test method: AddressValidation_ValidAddress_Orders</td>
+<td></td>
+<td>88</td>
+<td>TestCases.Regression.AddressValidation@6f7fd0e6</td></tr>
+<tr>
+<td title='TestCases.Regression.AddressValidation.TestCase67_AddressValidation_WithDisableAddressSettings_ACcs()'><b>TestCase67_AddressValidation_WithDisableAddressSettings_ACcs</b><br>Test class: TestCases.Regression.AddressValidation<br>Test method: AddressValidation_WithDisableAddressSettings_ACcs</td>
+<td></td>
+<td>128</td>
+<td>TestCases.Regression.AddressValidation@6f7fd0e6</td></tr>
+<tr>
+<td title='TestCases.Regression.AddressValidation.TestCase68_AddressValidation_WithDisableAddressSettings_Quotes()'><b>TestCase68_AddressValidation_WithDisableAddressSettings_Quotes</b><br>Test class: TestCases.Regression.AddressValidation<br>Test method: AddressValidation_WithDisableAddressSettings_Quotes</td>
+<td></td>
+<td>108</td>
+<td>TestCases.Regression.AddressValidation@6f7fd0e6</td></tr>
+<tr>
+<td title='TestCases.Regression.AddressValidation.TestCase69_AddressValidation_WithDisableAddressSettings_Orders()'><b>TestCase69_AddressValidation_WithDisableAddressSettings_Orders</b><br>Test class: TestCases.Regression.AddressValidation<br>Test method: AddressValidation_WithDisableAddressSettings_Orders</td>
+<td></td>
+<td>100</td>
+<td>TestCases.Regression.AddressValidation@6f7fd0e6</td></tr>
+<tr>
+<td title='TestCases.Regression.AddressValidation.TestCase72_AddressValidation_WithInvalidAddress_ACcs()'><b>TestCase72_AddressValidation_WithInvalidAddress_ACcs</b><br>Test class: TestCases.Regression.AddressValidation<br>Test method: AddressValidation_WithInvalidAddress_ACcs</td>
+<td></td>
+<td>116</td>
+<td>TestCases.Regression.AddressValidation@6f7fd0e6</td></tr>
+<tr>
+<td title='TestCases.Regression.AddressValidation.TestCase73_AddressValidation_WithInvalidAddress_Quotes()'><b>TestCase73_AddressValidation_WithInvalidAddress_Quotes</b><br>Test class: TestCases.Regression.AddressValidation<br>Test method: AddressValidation_WithInvalidAddress_Quotes</td>
+<td></td>
+<td>100</td>
+<td>TestCases.Regression.AddressValidation@6f7fd0e6</td></tr>
+<tr>
+<td title='TestCases.Regression.AddressValidation.TestCase74_AddressValidation_WithInvalidAddress_Orders()'><b>TestCase74_AddressValidation_WithInvalidAddress_Orders</b><br>Test class: TestCases.Regression.AddressValidation<br>Test method: AddressValidation_WithInvalidAddress_Orders</td>
+<td></td>
+<td>87</td>
+<td>TestCases.Regression.AddressValidation@6f7fd0e6</td></tr>
+<tr>
+<td title='TestCases.Regression.AddressValidation.TestCase77_AddressValidation_BlankAddress_ACcs()'><b>TestCase77_AddressValidation_BlankAddress_ACcs</b><br>Test class: TestCases.Regression.AddressValidation<br>Test method: AddressValidation_BlankAddress_ACcs</td>
+<td></td>
+<td>120</td>
+<td>TestCases.Regression.AddressValidation@6f7fd0e6</td></tr>
+<tr>
+<td title='TestCases.Regression.AddressValidation.TestCase78_AddressValidation_BlankAddress_Quotes()'><b>TestCase78_AddressValidation_BlankAddress_Quotes</b><br>Test class: TestCases.Regression.AddressValidation<br>Test method: AddressValidation_BlankAddress_Quotes</td>
+<td></td>
+<td>93</td>
+<td>TestCases.Regression.AddressValidation@6f7fd0e6</td></tr>
+<tr>
+<td title='TestCases.Regression.AddressValidation.TestCase79_AddressValidation_BlankAddress_Orders()'><b>TestCase79_AddressValidation_BlankAddress_Orders</b><br>Test class: TestCases.Regression.AddressValidation<br>Test method: AddressValidation_BlankAddress_Orders</td>
+<td></td>
+<td>87</td>
+<td>TestCases.Regression.AddressValidation@6f7fd0e6</td></tr>
+<tr>
+<td title='TestCases.Regression.AddressValidation.TestCaseC1586477_AddressValidation_WithInvalidShippingAddress_MyTestProjecteXAMPLEConfiguration()'><b>TestCaseC1586477_AddressValidation_WithInvalidShippingAddress_MyTestProjecteXAMPLEConfiguration</b><br>Test class: TestCases.Regression.AddressValidation<br>Test method: Validate invalid ShippingFrom address on MyTestProjecteXAMPLE Configuaration, test rail testcase C1586477</td>
+<td></td>
+<td>57</td>
+<td>TestCases.Regression.AddressValidation@6f7fd0e6</td></tr>
+<tr>
+<td title='TestCases.Regression.AddressValidation.TestCaseC1586478_AddressValidation_WithBlankShipFromAddress_MyTestProjecteXAMPLEConfiguration()'><b>TestCaseC1586478_AddressValidation_WithBlankShipFromAddress_MyTestProjecteXAMPLEConfiguration</b><br>Test class: TestCases.Regression.AddressValidation<br>Test method: Validate error message for Blank ShippingFrom address on MyTestProjecteXAMPLE Configuaration, test rail testcase C1586478</td>
+<td></td>
+<td>43</td>
+<td>TestCases.Regression.AddressValidation@6f7fd0e6</td></tr>
+<tr>
+<td title='TestCases.Regression.AddressValidation.testCaseC1586474_C1586476_Addressvalidation_ValidShippingAddress_MyTestProjecteXAMPLEConfiguration()'><b>testCaseC1586474_C1586476_Addressvalidation_ValidShippingAddress_MyTestProjecteXAMPLEConfiguration</b><br>Test class: TestCases.Regression.AddressValidation<br>Test method: Validate valid address on MyTestProjecteXAMPLE Configuration, test rail testcase C1586474, C1586476</td>
+<td></td>
+<td>59</td>
+<td>TestCases.Regression.AddressValidation@6f7fd0e6</td></tr>
+<tr>
+<td title='TestCases.Regression.AddressValidation.testCaseC1586475_AddressValidation_WithDisableAddressSettings_MyTestProjecteXAMPLEConfiguration()'><b>testCaseC1586475_AddressValidation_WithDisableAddressSettings_MyTestProjecteXAMPLEConfiguration</b><br>Test class: TestCases.Regression.AddressValidation<br>Test method: Address validation setting Disbaled and Validate ShippingFrom address on MyTestProjecteXAMPLE Configuaration, test rail testcase C1586475</td>
+<td></td>
+<td>43</td>
+<td>TestCases.Regression.AddressValidation@6f7fd0e6</td></tr>
+<tr>
+<td title='TestCases.Regression.AddressValidation.testCaseC1846936_originAddressValidationWithDisableAddressValSetting_Order()'><b>testCaseC1846936_originAddressValidationWithDisableAddressValSetting_Order</b><br>Test class: TestCases.Regression.AddressValidation<br>Test method: Origin Address - Address Validation Disabled: Test address validation with valid address- testcase 	C1846936</td>
+<td></td>
+<td>89</td>
+<td>TestCases.Regression.AddressValidation@6f7fd0e6</td></tr>
+<tr>
+<td title='TestCases.Regression.AddressValidation.testCaseC1846937_originAddressValidationDontUpdateValidatedAddress_Order()'><b>testCaseC1846937_originAddressValidationDontUpdateValidatedAddress_Order</b><br>Test class: TestCases.Regression.AddressValidation<br>Test method: Origin Address - Address Validation Enabled: Test address validation with valid address - Don't update the address- testcase C1846937</td>
+<td></td>
+<td>93</td>
+<td>TestCases.Regression.AddressValidation@6f7fd0e6</td></tr>
+<tr>
+<td title='TestCases.Regression.AddressValidation.testCaseC1846938_originAddressValidationUpdateValidatedAddress_Order()'><b>testCaseC1846938_originAddressValidationUpdateValidatedAddress_Order</b><br>Test class: TestCases.Regression.AddressValidation<br>Test method: Origin Address - Address Validation Enabled: Test address validation with valid address - Update Address- testcase C1846938</td>
+<td></td>
+<td>89</td>
+<td>TestCases.Regression.AddressValidation@6f7fd0e6</td></tr>
+<tr>
+<td title='TestCases.Regression.AddressValidation.testCaseC1846939_originAddressValidationWithIncorrectAddress_Order()'><b>testCaseC1846939_originAddressValidationWithIncorrectAddress_Order</b><br>Test class: TestCases.Regression.AddressValidation<br>Test method: Origin Address - Address Validation Enabled: Test address validation with incorrect/insufficient address- testcase C1846939</td>
+<td></td>
+<td>91</td>
+<td>TestCases.Regression.AddressValidation@6f7fd0e6</td></tr>
+<tr>
+<td title='TestCases.Regression.AddressValidation.testCaseC1846940_originAddressValidationWithBlankAddress_Order()'><b>testCaseC1846940_originAddressValidationWithBlankAddress_Order</b><br>Test class: TestCases.Regression.AddressValidation<br>Test method: Origin Address - Address Validation Enabled: Test address validation with Blank address- testcase C1846940</td>
+<td></td>
+<td>89</td>
+<td>TestCases.Regression.AddressValidation@6f7fd0e6</td></tr>
+<tr>
+<td title='TestCases.Regression.AddressValidation.testCaseC1846942_originAddressValidationWithDisableAddressValSetting_Quotes()'><b>testCaseC1846942_originAddressValidationWithDisableAddressValSetting_Quotes</b><br>Test class: TestCases.Regression.AddressValidation<br>Test method: Origin Address - Address Validation Disabled: Test address validation with valid address- testcase C1846942</td>
+<td></td>
+<td>89</td>
+<td>TestCases.Regression.AddressValidation@6f7fd0e6</td></tr>
+<tr>
+<td title='TestCases.Regression.AddressValidation.testCaseC1846943_originAddressValidationWithDisableAddressValSetting_Opportunity()'><b>testCaseC1846943_originAddressValidationWithDisableAddressValSetting_Opportunity</b><br>Test class: TestCases.Regression.AddressValidation<br>Test method: Opportunity -Origin Address - Address Validation Disabled: Test address validation with valid address- testcase C1846943</td>
+<td></td>
+<td>84</td>
+<td>TestCases.Regression.AddressValidation@6f7fd0e6</td></tr>
+<tr>
+<td title='TestCases.Regression.AddressValidation.testCaseC1846944_originAddressValidationDontUpdateValidatedAddress_Quotes()'><b>testCaseC1846944_originAddressValidationDontUpdateValidatedAddress_Quotes</b><br>Test class: TestCases.Regression.AddressValidation<br>Test method: Origin Address - Address Validation Enabled: Test address validation with valid address - Don't update the address- testcase C1846944</td>
+<td></td>
+<td>83</td>
+<td>TestCases.Regression.AddressValidation@6f7fd0e6</td></tr>
+<tr>
+<td title='TestCases.Regression.AddressValidation.testCaseC1846945_originAddressValidationDontUpdateValidatedAddress_Opportunity()'><b>testCaseC1846945_originAddressValidationDontUpdateValidatedAddress_Opportunity</b><br>Test class: TestCases.Regression.AddressValidation<br>Test method: Origin Address - Address Validation Enabled: Test address validation with valid address - Don't update the address- testcase C1846945</td>
+<td></td>
+<td>77</td>
+<td>TestCases.Regression.AddressValidation@6f7fd0e6</td></tr>
+<tr>
+<td title='TestCases.Regression.AddressValidation.testCaseC1846946_originAddressValidationUpdateValidatedAddress_Quotes()'><b>testCaseC1846946_originAddressValidationUpdateValidatedAddress_Quotes</b><br>Test class: TestCases.Regression.AddressValidation<br>Test method: Origin Address - Address Validation Enabled: Test address validation with valid address - Update Address- testcase C1846946</td>
+<td></td>
+<td>83</td>
+<td>TestCases.Regression.AddressValidation@6f7fd0e6</td></tr>
+<tr>
+<td title='TestCases.Regression.AddressValidation.testCaseC1846947_originAddressValidationUpdateValidatedAddress_Opportunity()'><b>testCaseC1846947_originAddressValidationUpdateValidatedAddress_Opportunity</b><br>Test class: TestCases.Regression.AddressValidation<br>Test method: Opportunity -Origin Address - Address Validation Enabled: Test address validation with valid address - Update Address- testcase C1846947</td>
+<td></td>
+<td>79</td>
+<td>TestCases.Regression.AddressValidation@6f7fd0e6</td></tr>
+<tr>
+<td title='TestCases.Regression.AddressValidation.testCaseC1846948_originAddressValidationWithIncorrectAddress_Quotes()'><b>testCaseC1846948_originAddressValidationWithIncorrectAddress_Quotes</b><br>Test class: TestCases.Regression.AddressValidation<br>Test method: Origin Address - Address Validation Enabled: Test address validation with incorrect/insufficient address- testcase C1846948</td>
+<td></td>
+<td>77</td>
+<td>TestCases.Regression.AddressValidation@6f7fd0e6</td></tr>
+<tr>
+<td title='TestCases.Regression.AddressValidation.testCaseC1846949_originAddressValidationWithIncorrectAddress_Quotes()'><b>testCaseC1846949_originAddressValidationWithIncorrectAddress_Quotes</b><br>Test class: TestCases.Regression.AddressValidation<br>Test method: Opportunity -Origin Address - Address Validation Enabled: Test address validation with incorrect/insufficient address- testcase C1846949</td>
+<td></td>
+<td>77</td>
+<td>TestCases.Regression.AddressValidation@6f7fd0e6</td></tr>
+<tr>
+<td title='TestCases.Regression.AddressValidation.testCaseC1847038_LineLevelAddressVal_DontUpdateValidatedAddress_Opportunity()'><b>testCaseC1847038_LineLevelAddressVal_DontUpdateValidatedAddress_Opportunity</b><br>Test class: TestCases.Regression.AddressValidation<br>Test method: F:Opportunity Line Level -Shipping Address - Address Validation Enabled: Test address validation with valid address - Don't update the address- testcase C1847038</td>
+<td></td>
+<td>102</td>
+<td>TestCases.Regression.AddressValidation@6f7fd0e6</td></tr>
+<tr>
+<td title='TestCases.Regression.AddressValidation.testCaseC1847050_LineLevelAddressVal_DontUpdateValidatedAddress_Quotes()'><b>testCaseC1847050_LineLevelAddressVal_DontUpdateValidatedAddress_Quotes</b><br>Test class: TestCases.Regression.AddressValidation<br>Test method: F:Quote Line Level -Ship To Address - Address Validation Enabled: Test address validation with valid address - Don't update the address- testcase C1847050</td>
+<td></td>
+<td>112</td>
+<td>TestCases.Regression.AddressValidation@6f7fd0e6</td></tr>
+<tr>
+<td title='TestCases.Regression.AddressValidation.testCaseC1847056_LineLevelAddressVal_DontUpdateValidatedAddress_Order()'><b>testCaseC1847056_LineLevelAddressVal_DontUpdateValidatedAddress_Order</b><br>Test class: TestCases.Regression.AddressValidation<br>Test method: F:Order Line Level -Shipping Address - Address Validation Enabled: Test address validation with valid address - Don't update the address- testcase C1847056</td>
+<td></td>
+<td>114</td>
+<td>TestCases.Regression.AddressValidation@6f7fd0e6</td></tr>
+</table><p>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="11" total="12" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default Suite" duration-ms="222389" started-at="2024-03-14T21:52:49 IST" finished-at="2024-03-14T21:56:32 IST">
+    <groups>
+    </groups>
+    <test name="SalesCloud_Automation" duration-ms="222389" started-at="2024-03-14T21:52:49 IST" finished-at="2024-03-14T21:56:32 IST">
+      <class name="TestCases.FunctionalAndRegression.CrossBorder">
+        <test-method status="PASS" signature="ExcelSheetName()[pri:0, instance:TestCases.FunctionalAndRegression.CrossBorder@39aeed2f]" name="ExcelSheetName" is-config="true" duration-ms="16993" started-at="2024-03-14T21:52:49 IST" finished-at="2024-03-14T21:53:06 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ExcelSheetName -->
+        <test-method status="PASS" signature="TestCase190_UStoCANCustomDutyCalculated_DeminimusThresholdMet_IORYes_HSCode()[pri:11, instance:TestCases.FunctionalAndRegression.CrossBorder@39aeed2f]" name="TestCase190_UStoCANCustomDutyCalculated_DeminimusThresholdMet_IORYes_HSCode" duration-ms="204299" started-at="2024-03-14T21:53:06 IST" description="TestCase190_UStoCANCustomDutyCalculated_DeminimusThresholdMet_IORYes_HSCode" finished-at="2024-03-14T21:56:30 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCase190_UStoCANCustomDutyCalculated_DeminimusThresholdMet_IORYes_HSCode -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestCases.FunctionalAndRegression.CrossBorder@39aeed2f]" name="tearDown" is-config="true" duration-ms="1067" started-at="2024-03-14T21:56:30 IST" finished-at="2024-03-14T21:56:32 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- TestCases.FunctionalAndRegression.CrossBorder -->
+    </test> <!-- SalesCloud_Automation -->
+  </suite> <!-- Default Suite -->
+</testng-results>

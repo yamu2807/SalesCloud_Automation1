@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<!-- <test thread-count="5" name="SalesForce_CreateWorkflowForTaxCalc_Prerequisites"> 
+		<classes> <class name="TestCases.Regression.SalesForce_CreateWorkflowForTaxCalc_Prerequisites"> 
+		</class> </classes> </test> -->
+	<test thread-count="5" name="ThirdPartyTaxCalculation">
+		<classes>
+			<class name="TestCases.Regression.ThirdPartyTaxCalculation">
+			<!-- <class name="TestCases.Regression.TaxCalculation"> -->
+				<methods>
+        <!-- <include name="TestCase1_EnableTaxCalc_ACc_PrimaryShipToAddressUncommit"/> -->
+     <!-- <include name="ExmeptionCertificate_ExpiredDateBeforeIssueDate"/> -->
+      
+				</methods>
+			</class>
+		</classes> 
+	</test>
+	
+	<!-- <test thread-count="5" name="TaxCalculation">
+		<classes>
+			<class name="TestCases.Regression.TaxCalculation">
+				<methods>
+		<include name="TestCase1_EnableTaxCalc_ACc_PrimaryShipToAddressUncommit"/>
+				</methods>
+			</class>
+		</classes> 
+	</test> -->
+	
+<!-- 	 <test thread-count="5" name="AutomaticTaxCalculate2">
+		<classes>
+			<class name="TestCases.Regression.AutomaticTaxCalculate">
+				<methods>
+					
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test thread-count="5" name="SalesForce_AddressValidation3">
+		<classes>
+			<class name="TestCases.Regression.AddressValidation">
+				<methods>
+					
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test thread-count="5" name="ThirdPartyTaxCalculation">
+		<classes>
+			<class name="TestCases.Regression.ThirdPartyTaxCalculation">
+				<methods>
+				
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test thread-count="5" name="ThirdPartyAddressValidation5">
+		<classes>
+			<class name="TestCases.Regression.ThirdPartyAddressValidation">
+				<methods>
+					
+
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test thread-count="5" name="SalesForce_TaxCode6">
+		<classes>
+			<class name="TestCases.Regression.TaxCode">
+				<methods>
+					
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<test thread-count="5" name="SalesForce_VAT7">
+		<classes>
+			<class name="TestCases.Regression.VAT">
+				<methods>
+					
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+
+	<test thread-count="5" name="SalesForce_ExemptionNumber8">
+		<classes>
+			<class name="TestCases.Regression.ExemptionNumber">
+				<methods>
+					
+				</methods>
+			</class>
+		</classes>
+	</test>
+
+	<test thread-count="5" name="Tax_Override9">
+		<classes>
+			<class name="TestCases.Regression.Tax_Override">
+				<methods>
+					
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	
+	<test thread-count="5" name="ErrorMessageDisplayed10">
+		<classes>
+			<class name="TestCases.Regression.ErrorMessageDisplayed">
+				<methods>
+					
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	
+	<test thread-count="5" name="EntityUseCode11">
+		<classes>
+			<class name="TestCases.Regression.EntityUseCode">
+				<methods>
+					
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	
+	<test thread-count="5" name="MISC_Charges12">
+		<classes>
+			<class name="TestCases.Regression.MISC_Charges">
+				<methods>
+					
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	
+	<test thread-count="5" name="UPC_Code13">
+		<classes>
+			<class name="TestCases.Regression.UPC_Code">
+				<methods>
+					
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	
+	<test thread-count="5" name="TestMultiEntityConfigurationSettings14">
+		<classes>
+			<class name="TestCases.Regression.TestMultiEntityConfigurationSettings">
+				<methods>
+					
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	
+	<test thread-count="5" name="TestMyTestProjecteXAMPLEcred15">
+		<classes>
+			<class name="TestCases.Regression.TestMyTestProjecteXAMPLEcred">
+				<methods>
+					
+				</methods>
+			</class>
+		</classes>
+	</test>  -->
+<!-- 	<test thread-count="5" name="ErrorMessageDisplayed">
+		<classes>
+			<class name="TestCases.Regression.taxCalculation" />
+			<class name="TestCases.Regression.SalesForce_3rdPartyAddressValidation" />
+			<class name="TestCases.Regression.SalesForce_ErrorMessageDisplayed" />
+			<class name="TestCases.Regression.SalesForce_ExemptionNumber" />
+			<class name="TestCases.Regression.SalesForce_UPC_Code" />
+			<class name="TestCases.Regression.SalesForce_MISC_Charges" />
+			<class name="TestCases.Regression.SalesForce_3rdPartyTaxCalculation" />
+			<class name="TestCases.Regression.SalesForce_TaxCode" />
+			<class name="TestCases.Regression.SalesForce_AddressValidation" />
+			<class name="TestCases.Regression.SalesForce_EntityUseCode" />
+			<class
+				name="SalesForce_Automation_Maven.SalesForce_Automation_Maven.AppTest" />
+		</classes>
+	</test>  -->
+</suite> <!-- Suite -->
